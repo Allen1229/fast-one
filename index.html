@@ -74,23 +74,48 @@
         </div>
         
         <div class="container stats-container">
-            <div class="stat-item">
-                <h3 class="text-accent stat-number" data-target="100">0</h3>
-                <p class="stat-label">HTML GAMES</p>
+            <div class="gauge-item" data-target="100" data-max="100" data-color="#00e600">
+                <svg class="gauge-svg" viewBox="0 0 120 75">
+                    <path class="gauge-bg" d="M10,70 A50,50 0 0,1 110,70" />
+                    <path class="gauge-fill" d="M10,70 A50,50 0 0,1 110,70" />
+                    <line class="gauge-needle" x1="60" y1="70" x2="60" y2="25" />
+                    <circle cx="60" cy="70" r="4" fill="#333" stroke="#666" stroke-width="1"/>
+                </svg>
+                <div class="gauge-value text-accent">0<span>+</span></div>
+                <p class="gauge-label">HTML GAMES</p>
             </div>
-            <div class="stat-item">
-                <h3 class="text-accent stat-number" data-target="10">0</h3>
-                <p class="stat-label">GAMES CERTIFICATIONS</p>
+            <div class="gauge-item" data-target="10" data-max="16" data-color="#ffffff">
+                <svg class="gauge-svg" viewBox="0 0 120 75">
+                    <path class="gauge-bg" d="M10,70 A50,50 0 0,1 110,70" />
+                    <path class="gauge-fill" d="M10,70 A50,50 0 0,1 110,70" />
+                    <line class="gauge-needle" x1="60" y1="70" x2="60" y2="25" />
+                    <circle cx="60" cy="70" r="4" fill="#333" stroke="#666" stroke-width="1"/>
+                </svg>
+                <div class="gauge-value text-accent">0<span>+</span></div>
+                <p class="gauge-label">GAMES CERTIFICATIONS</p>
             </div>
-            <div class="stat-item">
-                <h3 class="text-accent stat-number" data-target="50">0</h3>
-                <p class="stat-label">CURRENCIES SUPPORTED</p>
+            <div class="gauge-item" data-target="50" data-max="60" data-color="#ffcc00">
+                <svg class="gauge-svg" viewBox="0 0 120 75">
+                    <path class="gauge-bg" d="M10,70 A50,50 0 0,1 110,70" />
+                    <path class="gauge-fill" d="M10,70 A50,50 0 0,1 110,70" />
+                    <line class="gauge-needle" x1="60" y1="70" x2="60" y2="25" />
+                    <circle cx="60" cy="70" r="4" fill="#333" stroke="#666" stroke-width="1"/>
+                </svg>
+                <div class="gauge-value text-accent">0<span>+</span></div>
+                <p class="gauge-label">CURRENCIES SUPPORTED</p>
             </div>
-            <div class="stat-item">
-                <h3 class="text-accent stat-number" data-target="12">0</h3>
-                <p class="stat-label">LANGUAGES SUPPORTED</p>
+            <div class="gauge-item" data-target="12" data-max="25" data-color="#e50914">
+                <svg class="gauge-svg" viewBox="0 0 120 75">
+                    <path class="gauge-bg" d="M10,70 A50,50 0 0,1 110,70" />
+                    <path class="gauge-fill" d="M10,70 A50,50 0 0,1 110,70" />
+                    <line class="gauge-needle" x1="60" y1="70" x2="60" y2="25" />
+                    <circle cx="60" cy="70" r="4" fill="#333" stroke="#666" stroke-width="1"/>
+                </svg>
+                <div class="gauge-value text-accent">0<span>+</span></div>
+                <p class="gauge-label">LANGUAGES SUPPORTED</p>
             </div>
         </div>
+    </section>
     </section>
 
     <!-- Game Categories / Filters -->
@@ -123,50 +148,54 @@
         </div>
     </section>
 
-    <!-- B2B Section -->
+    <!-- B2B Section - The Pit Stop -->
     <section class="b2b-section">
         <div class="container text-center">
             <h3 class="b2b-label">B2B</h3>
-            <h2 class="b2b-title">POWERING YOUR <span class="text-accent">GAMING BUSINESS</span></h2>
-            <div class="b2b-features">
-                <div class="feature-item">
-                    <div class="feature-icon">🧩</div>
-                    <h4>GAME INTEGRATION</h4>
+            <h2 class="b2b-title">POWERING YOUR BUSINESS – <span class="text-accent">THE PIT STOP</span></h2>
+            <div class="pit-grid">
+                <div class="pit-card">
+                    <div class="pit-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="4" y="20" width="16" height="16" rx="3" stroke="#00e0ff" stroke-width="2.5"/><rect x="28" y="12" width="16" height="24" rx="3" stroke="#00e0ff" stroke-width="2.5"/><path d="M20 28H28" stroke="#00e0ff" stroke-width="2.5" stroke-linecap="round"/><path d="M20 24H28" stroke="#00e0ff" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="2 3"/></svg>
+                    </div>
+                    <h4>GAME<br>INTEGRATION</h4>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">⚙️</div>
-                    <h4>CUSTOM DEVELOPMENT</h4>
+                <div class="pit-card">
+                    <div class="pit-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="#ccc" stroke-width="2.5"/><circle cx="24" cy="24" r="6" stroke="#ccc" stroke-width="2"/><path d="M24 6V12M24 36V42M6 24H12M36 24H42" stroke="#ccc" stroke-width="2.5" stroke-linecap="round"/><path d="M11 11L15 15M33 33L37 37M37 11L33 15M11 37L15 33" stroke="#ccc" stroke-width="2" stroke-linecap="round"/></svg>
+                    </div>
+                    <h4>CUSTOM<br>DEVELOPMENT</h4>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">📊</div>
-                    <h4>BACK-OFFICE SOLUTIONS</h4>
+                <div class="pit-card">
+                    <div class="pit-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="6" y="10" width="36" height="24" rx="3" stroke="#4da6ff" stroke-width="2.5"/><path d="M6 18H42" stroke="#4da6ff" stroke-width="2"/><path d="M14 38H34" stroke="#4da6ff" stroke-width="2.5" stroke-linecap="round"/><path d="M24 34V38" stroke="#4da6ff" stroke-width="2.5"/><rect x="12" y="22" width="6" height="8" rx="1" fill="#4da6ff" opacity="0.3"/><rect x="21" y="24" width="6" height="6" rx="1" fill="#4da6ff" opacity="0.5"/><rect x="30" y="22" width="6" height="8" rx="1" fill="#4da6ff" opacity="0.4"/></svg>
+                    </div>
+                    <h4>BACK-OFFICE<br>SOLUTIONS</h4>
                 </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🚀</div>
-                    <h4>24/7 SUPPORT</h4>
+                <div class="pit-card">
+                    <div class="pit-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><path d="M14 18C14 12.477 18.477 8 24 8C29.523 8 34 12.477 34 18V22H14V18Z" stroke="#00cc44" stroke-width="2.5"/><rect x="10" y="22" width="28" height="8" rx="4" stroke="#00cc44" stroke-width="2.5"/><circle cx="18" cy="26" r="1.5" fill="#00cc44"/><circle cx="30" cy="26" r="1.5" fill="#00cc44"/><path d="M14 30V36" stroke="#00cc44" stroke-width="2.5" stroke-linecap="round"/><path d="M34 30V36" stroke="#00cc44" stroke-width="2.5" stroke-linecap="round"/><path d="M10 40H38" stroke="#00cc44" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3"/></svg>
+                    </div>
+                    <h4>24/7<br>SUPPORT</h4>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Partners Carousel Section -->
-    <section class="partners-carousel">
-        <div class="carousel-track">
-            <div class="partner-logo">CASINO ENGINE</div>
-            <div class="partner-logo">B2B GAMING</div>
-            <div class="partner-logo">RED TIGER</div>
-            <div class="partner-logo">EVOLUTION</div>
-            <div class="partner-logo">PRAGMATIC PLAY</div>
-            <div class="partner-logo">MICROGAMING</div>
-            <div class="partner-logo">NETENT</div>
-            <!-- Duplicate for seamless infinite loop -->
-            <div class="partner-logo">CASINO ENGINE</div>
-            <div class="partner-logo">B2B GAMING</div>
-            <div class="partner-logo">RED TIGER</div>
-            <div class="partner-logo">EVOLUTION</div>
-            <div class="partner-logo">PRAGMATIC PLAY</div>
-            <div class="partner-logo">MICROGAMING</div>
-            <div class="partner-logo">NETENT</div>
+    <!-- Partners Flip Board Section -->
+    <section class="partners-podium">
+        <div class="podium-track">
+            <div class="flip-slots left-slots">
+                <div class="flip-slot" data-index="0"><span class="flip-text"></span></div>
+                <div class="flip-slot" data-index="1"><span class="flip-text"></span></div>
+                <div class="flip-slot" data-index="2"><span class="flip-text"></span></div>
+            </div>
+            <div class="podium-trophy">🏆</div>
+            <div class="flip-slots right-slots">
+                <div class="flip-slot" data-index="3"><span class="flip-text"></span></div>
+                <div class="flip-slot" data-index="4"><span class="flip-text"></span></div>
+                <div class="flip-slot" data-index="5"><span class="flip-text"></span></div>
+            </div>
         </div>
     </section>
 
