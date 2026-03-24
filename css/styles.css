@@ -155,14 +155,16 @@ ul { list-style: none; }
   border-bottom: var(--border-subtle); 
   position: relative;
 }
-.intro-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 60px; position: relative; z-index: 2; }
-.intro-image { width: 100%; display: flex; justify-content: center; position: relative; }
-/* Simulated Graphic since we don't have the original PNG pattern */
-.provider-logo-box { width: 100%; aspect-ratio: 1/1; max-width: 400px; border-radius: 20px; background: linear-gradient(135deg, rgba(5,5,5,0.9), rgba(229,9,20,0.1)); display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px); box-shadow: 0 10px 40px rgba(0,0,0,0.8); }
-.logo-inner { text-align: center; font-family: var(--font-heading); animation: float 6s ease-in-out infinite; }
+.intro-container { display: grid; grid-template-columns: 1.5fr 1fr; gap: 80px; align-items: center; margin-bottom: 60px; position: relative; z-index: 2; }
+.intro-image { width: 100%; display: flex; justify-content: flex-start; position: relative; }
+.intro-img {
+  width: 130%; max-width: 1400px; border-radius: 24px;
+  box-shadow: 0 40px 100px rgba(0,0,0,1), 0 0 60px rgba(229,9,20,0.3);
+  transform: translateX(-15%); /* Further emphasis on the brand overlap */
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.intro-img:hover { transform: translateX(-15%) scale(1.03); box-shadow: 0 50px 120px rgba(0,0,0,1), 0 0 100px rgba(229,9,20,0.45); }
 @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
-.logo-inner i { font-size: 3.5rem; color: var(--text-primary); text-shadow: var(--neon-glow); }
-.logo-inner p { font-size: 1.2rem; color: var(--accent-red); margin-top: 10px; font-weight: bold; letter-spacing: 2px; }
 .intro-text .section-title { font-size: 2.5rem; line-height: 1.2; font-style: normal; text-align: left; margin-bottom: 24px; text-transform: uppercase; }
 .intro-text p { color: var(--text-secondary); font-size: 1.15rem; line-height: 1.8; margin-bottom: 30px; }
 
@@ -209,7 +211,6 @@ ul { list-style: none; }
   position: relative;
   border-top: 1px solid rgba(229,9,20,0.2);
 }
-/* Background image layer with reduced saturation */
 .featured-games::before {
   content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
   background: url('../img/gamebg.png') center center / cover no-repeat;
@@ -307,16 +308,28 @@ ul { list-style: none; }
 }
 /* Flip animation */
 .flip-slot.flipping {
-  animation: slotFlip 0.5s ease-in-out;
+  animation: slotFlip 0.5s ease-in-out, slotColorFlash 0.5s ease-in-out;
 }
 .flip-slot.flipping .flip-text {
-  opacity: 0;
+  animation: textColorFlash 0.5s ease-in-out;
 }
 @keyframes slotFlip {
   0%   { transform: rotateX(0deg); }
   40%  { transform: rotateX(-90deg); }
   60%  { transform: rotateX(-90deg); }
   100% { transform: rotateX(0deg); }
+}
+@keyframes slotColorFlash {
+  0%   { border-color: #333; box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 4px 12px rgba(0,0,0,0.6); background: linear-gradient(180deg, #1e1e1e, #141414); }
+  30%  { border-color: #e50914; box-shadow: 0 0 15px rgba(229,9,20,0.4), inset 0 0 10px rgba(229,9,20,0.1); background: linear-gradient(180deg, #2a1a1a, #1a0a0a); }
+  60%  { border-color: #ff4444; box-shadow: 0 0 20px rgba(229,9,20,0.5), inset 0 0 15px rgba(229,9,20,0.15); background: linear-gradient(180deg, #2e1e1e, #1e0e0e); }
+  100% { border-color: #333; box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 4px 12px rgba(0,0,0,0.6); background: linear-gradient(180deg, #1e1e1e, #141414); }
+}
+@keyframes textColorFlash {
+  0%   { color: #ccc; opacity: 1; }
+  30%  { color: #e50914; opacity: 0; }
+  60%  { color: #ff6666; opacity: 0; }
+  100% { color: #ccc; opacity: 1; }
 }
 .podium-trophy { font-size: 4rem; margin: 0 30px; filter: drop-shadow(0 0 20px rgba(255,215,0,0.5)); animation: trophy-glow 3s ease-in-out infinite alternate; }
 @keyframes trophy-glow { 0% { filter: drop-shadow(0 0 10px rgba(255,215,0,0.3)); transform: scale(1); } 100% { filter: drop-shadow(0 0 25px rgba(255,215,0,0.6)); transform: scale(1.05); } }
