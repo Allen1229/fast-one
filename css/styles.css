@@ -87,7 +87,7 @@ ul { list-style: none; }
 .nav-links a.active::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 100%; height: 2px; background-color: var(--accent-red); box-shadow: var(--neon-glow); }
 
 /* Buttons - Carbon Fiber Sharp Aesthetic */
-.btn { padding: 12px 28px; border-radius: 2px; font-family: var(--font-heading); font-weight: 800; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; border: none; letter-spacing: 1px; text-transform: uppercase; transform: skewX(-5deg); }
+.btn { display: inline-block; padding: 12px 28px; border-radius: 2px; font-family: var(--font-heading); font-weight: 800; font-size: 0.9rem; cursor: pointer; transition: all 0.3s ease; border: none; letter-spacing: 1px; text-transform: uppercase; transform: skewX(-5deg); }
 .btn-primary { background: linear-gradient(90deg, var(--accent-red) 0%, #aa060f 100%); color: white; box-shadow: 4px 4px 15px rgba(229, 9, 20, 0.4); position: relative; overflow: hidden; }
 .btn-primary::before { content: ''; position: absolute; top: 0; left: -100%; width: 50%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); transform: skewX(-15deg); transition: 0.5s; }
 .btn-primary:hover { background: var(--accent-red-bright); box-shadow: 6px 6px 20px rgba(229, 9, 20, 0.6); transform: translateY(-2px) skewX(-5deg); }
@@ -101,11 +101,11 @@ ul { list-style: none; }
 /* Refined for the new Hypercar Racing Image - Crisp, Clean, Dark */
 .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%;
   background: 
-    linear-gradient(90deg, #050505 0%, rgba(5,5,5,0.9) 35%, transparent 80%),
+    linear-gradient(90deg, #050505 0%, rgba(5,5,5,0.8) 25%, transparent 55%),
     url('../img/hero-racing2.png') center/cover;
   z-index: -1; }
-/* Removed the heavy red multiply overlay so the actual image's crisp white and red lights shine through naturally */
-.hero-bg::after { content: ''; position: absolute; inset: 0; background-color: rgba(0,0,0,0.3); pointer-events: none; }
+/* Removed the black overlay to keep the background chips and car sharp and vibrant */
+.hero-bg::after { content: ''; position: absolute; inset: 0; background-color: transparent; pointer-events: none; }
 .hero-content { max-width: 800px; padding-left: 10%; z-index: 1; animation: slideIn 0.8s ease-out forwards; }
 @keyframes slideIn { from { opacity: 0; transform: translateX(-30px); } to { opacity: 1; transform: translateX(0); } }
 
@@ -423,15 +423,24 @@ ul { list-style: none; }
   background: var(--bg-card); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px;
   padding: 32px 20px; text-align: center; transition: all 0.4s; position: relative; overflow: hidden;
 }
+.partner-card::after {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-conic-gradient(rgba(255,255,255,0.05) 0% 25%, transparent 0% 50%) 0 0 / 20px 20px;
+  opacity: 1; transition: all 0.4s; pointer-events: none; z-index: 0;
+}
 .partner-card::before {
   content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px;
   background: linear-gradient(90deg, transparent, var(--accent-red), transparent); opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s; z-index: 1;
 }
 .partner-card:hover { border-color: rgba(229,9,20,0.4); transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.5), var(--neon-glow); }
 .partner-card:hover::before { opacity: 1; }
-.partner-name { font-family: var(--font-heading); font-size: 1rem; font-weight: 800; letter-spacing: 1px; margin-bottom: 8px; }
-.partner-type { font-size: 0.8rem; color: var(--text-secondary); letter-spacing: 0.5px; }
+.partner-card:hover::after {
+  background: repeating-conic-gradient(rgba(229,9,20,0.12) 0% 25%, transparent 0% 50%) 0 0 / 20px 20px;
+  opacity: 1; transform: scale(1.05);
+}
+.partner-name { font-family: var(--font-heading); font-size: 1rem; font-weight: 800; letter-spacing: 1px; margin-bottom: 8px; position: relative; z-index: 2; }
+.partner-type { font-size: 0.8rem; color: var(--text-secondary); letter-spacing: 0.5px; position: relative; z-index: 2; }
 
 /* Integration Section */
 .integration-section { padding: 80px 0; background: var(--bg-card); }
@@ -442,8 +451,9 @@ ul { list-style: none; }
 }
 .integ-card:hover { border-color: var(--accent-red); transform: translateY(-4px); }
 .integ-number {
-  font-family: var(--font-heading); font-size: 3rem; font-weight: 900; color: rgba(229,9,20,0.15);
-  position: absolute; top: 12px; right: 16px; line-height: 1;
+  font-family: var(--font-heading); font-size: 3.5rem; font-weight: 900; font-style: italic; color: rgba(229,9,20,0.5);
+  text-shadow: 0 0 10px rgba(229,9,20,0.3);
+  position: absolute; top: 8px; right: 16px; line-height: 1;
 }
 .integ-card h3 { font-family: var(--font-heading); font-size: 1rem; font-weight: 800; margin-bottom: 12px; letter-spacing: 1px; }
 .integ-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; }

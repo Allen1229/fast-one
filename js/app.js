@@ -123,10 +123,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ── Partners Flip-Board (split-flap style) ──
     const partners = [
-        'EVOLUTION', 'NETENT', 'PRAGMATIC PLAY', 'MICROGAMING',
-        'RED TIGER', 'YGGDRASIL', 'PLAY\'N GO', 'QUICKSPIN',
-        'BIG TIME GAMING', 'HACKSAW', 'NOLIMIT CITY', 'PUSH GAMING',
-        'ELK STUDIOS', 'THUNDERKICK', 'RELAX GAMING', 'ISOFTBET'
+        'img/partners/partners1.jpg', 'img/partners/partners2.jpg', 'img/partners/partners3.jpg',
+        'img/partners/partners4.jpg', 'img/partners/partners5.jpg', 'img/partners/partners6.jpg',
+        'img/partners/partners7.jpg', 'img/partners/partners8.jpg', 'img/partners/partners9.jpg',
+        'img/partners/partners10.jpg', 'img/partners/partners11.jpg', 'img/partners/partners12.jpg',
+        'img/partners/partners13.jpg', 'img/partners/partners14.jpg'
     ];
 
     const flipSlots = document.querySelectorAll('.flip-slot');
@@ -134,13 +135,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const slotState = [];
     flipSlots.forEach((slot, i) => {
         const shuffled = [...partners].sort(() => Math.random() - 0.5);
-        slotState.push({ names: shuffled, idx: i % shuffled.length });
-        setSlotText(slot, shuffled[i % shuffled.length]);
+        slotState.push({ items: shuffled, idx: i % shuffled.length });
+        
+        // initialize the image element inside the slot
+        slot.innerHTML = '<img class="flip-img" style="height: 30px; width: auto; max-width: 140px; display: block; object-fit: contain;">';
+        setSlotImage(slot, shuffled[i % shuffled.length]);
     });
 
-    function setSlotText(slot, text) {
-        const span = slot.querySelector('.flip-text');
-        span.textContent = text;
+    function setSlotImage(slot, src) {
+        const img = slot.querySelector('.flip-img');
+        if(img) img.src = src;
     }
 
     function flipSlot(slotIndex) {
@@ -151,9 +155,9 @@ document.addEventListener('DOMContentLoaded', () => {
         slot.classList.add('flipping');
         
         setTimeout(() => {
-            // Move to next name
-            state.idx = (state.idx + 1) % state.names.length;
-            setSlotText(slot, state.names[state.idx]);
+            // Move to next image
+            state.idx = (state.idx + 1) % state.items.length;
+            setSlotImage(slot, state.items[state.idx]);
             slot.classList.remove('flipping');
         }, 300);
     }
